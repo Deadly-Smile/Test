@@ -8,9 +8,8 @@ const Home = () => {
         <div className="grid flex-grow place-items-center w-2/3">
           <LeftPanel />
         </div>
-        <div className="divider lg:divider-horizontal" />
-        <div className="grid flex-grow place-items-center w-1/3">
-          <RightPanel />
+        <div className="relative bg-base-200 w-1/3 mx-4">
+          <RightPanel title="You Plan" />
         </div>
       </div>
     </div>
