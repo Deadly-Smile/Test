@@ -3,7 +3,6 @@ import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import { AiFillFire } from "react-icons/ai";
-import RightPanel from "./components/RightPanel";
 
 const App = () => {
   const [navbarList, setNavbarList] = useState([
@@ -79,7 +78,8 @@ const App = () => {
       function: () => console.log("sign in button pressed"),
       link: "#",
       children: [],
-      className: "bg-orange-500 hover:bg-orange-600 mr-2 text-white",
+      className:
+        "bg-orange-600 hover:bg-orange-700 text-white border-orange-700",
     },
     {
       text: "Log In",
@@ -88,14 +88,20 @@ const App = () => {
       link: "#",
       children: [],
       className:
-        "hover:bg-orange-600 border-orange-500 bg-white text-orange-700 hover:text-white",
+        "hover:bg-orange-600 border-orange-500 bg-transparent text-orange-700 hover:text-white",
     },
   ]);
   return (
-    <div className="px-8">
-      <Navbar logoComponent={<AiFillFire />} renderingList={navbarList} />
-      <Home />
-      <Footer />
+    <div>
+      <div className="px-16 text-gray-700 bg-[#F9FBFF]">
+        <Navbar logoComponent={<AiFillFire />} renderingList={navbarList} />
+        <Home />
+      </div>
+      <Footer
+        signupClassname={
+          "bg-orange-600 hover:bg-orange-700 text-white border-orange-700"
+        }
+      />
     </div>
   );
 };

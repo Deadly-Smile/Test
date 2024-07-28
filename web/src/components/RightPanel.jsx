@@ -1,17 +1,10 @@
 import PropTypes from "prop-types";
 import { FaCheckToSlot } from "react-icons/fa6";
 
-const RightPanel = ({ title }) => {
-  const items = [
-    "Lorem Ipsum Dolor",
-    "Lorem Ipsum Dolor ipsum",
-    "Lorem Ipsum Dolor ipsum omit",
-    "Lorem Ipsum Dolor ipsum omit Notor Choose",
-  ];
-
+const RightPanel = ({ title, items, buttonText, handleClick }) => {
   return (
-    <div className="card rounded-lg shadow-md w-full text-gray-700">
-      <h2 className="p-4 text-lg">{title}</h2>
+    <div className="card bg-[#EFF3F3] rounded-lg shadow-md flex flex-col justify-between fixed top-26 right-20 border-none">
+      <p className="p-4 text-lg">{title}</p>
       <div className="w-full h-px bg-gray-600" />
       <ul className="space-y-2 p-4">
         {items.map((item, index) => (
@@ -21,8 +14,11 @@ const RightPanel = ({ title }) => {
           </li>
         ))}
       </ul>
-      <button className="w-full mt-8 bg-orange-500 text-white py-2 rounded-b hover:bg-orange-600">
-        Contact Sales
+      <button
+        className="btn w-full mt-8 bg-orange-600 text-white font-bold py-2 border-none rounded-b rounded-t-none hover:bg-orange-700"
+        onClick={handleClick}
+      >
+        {buttonText}
       </button>
     </div>
   );
@@ -30,6 +26,9 @@ const RightPanel = ({ title }) => {
 
 RightPanel.propTypes = {
   title: PropTypes.string.isRequired,
+  items: PropTypes.array,
+  buttonText: PropTypes.string.isRequired,
+  handleClick: PropTypes.func.isRequired,
 };
 
 export default RightPanel;

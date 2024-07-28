@@ -8,7 +8,7 @@ const renderList = (list) => {
         <li key={index}>
           <button
             onClick={item?.function}
-            className={`btn ${item?.className ? item?.className : ""}`}
+            className={`btn ${item?.className ? item?.className : ""} ml-2`}
           >
             <span>{item?.text}</span>
           </button>
@@ -19,7 +19,7 @@ const renderList = (list) => {
         <li key={index}>
           <Link
             to={item?.link}
-            className={`${item?.className ? item?.className : ""}`}
+            className={`${item?.className ? item?.className : ""} ml-2`}
           >
             <span>{item?.text}</span>
           </Link>
@@ -29,7 +29,9 @@ const renderList = (list) => {
       return (
         <li key={index}>
           <details>
-            <summary className={`${item?.className ? item?.className : ""}`}>
+            <summary
+              className={`${item?.className ? item?.className : ""} ml-2`}
+            >
               {item?.text}
             </summary>
             <ul className="bg-base-100 rounded-t-none p-1">
@@ -40,7 +42,10 @@ const renderList = (list) => {
       );
     } else {
       return (
-        <li key={index} className={`${item?.className ? item?.className : ""}`}>
+        <li
+          key={index}
+          className={`${item?.className ? item?.className : ""} ml-2`}
+        >
           <span>{item?.text}</span>
         </li>
       );
